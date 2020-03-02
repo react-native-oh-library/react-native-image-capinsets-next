@@ -15,7 +15,7 @@ jobs:
    - stage: deploy
      deploy:
        provider: npm
-       email: gaoxiaosong06@gmail.com
+       email: hello@maycon.dev
        api_key: "$NPM_TOKEN"
        on:
          tags: true
