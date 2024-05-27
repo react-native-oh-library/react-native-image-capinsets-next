@@ -1,0 +1,12 @@
+{
+  "license": "ISC",
+  "types": "",
+  "devDependencies": {},
+  "name": "@react-native-oh-tpl/react-native-image-capinsets-next",
+  "description": "",
+  "main": "index.ets",
+  "version": "0.0.0",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
+  }
+}
