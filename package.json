@@ -1,32 +1,44 @@
 {
-  "name": "react-native-image-capinsets-next",
+  "name": "@react-native-oh-tpl/react-native-image-capinsets-next",
   "main": "index.js",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mayconmesquita/react-native-image-capinsets-next.git"
+    "url": "https://github.com/react-native-oh-library/react-native-image-capinsets-next.git"
   },
   "scripts": {
     "patch": "npm version patch -m 'Bump version %s';git push origin master --tags"
   },
-  "version": "0.6.1",
-  "description": "android support for Image `capInsets`",
-  "author": {
-    "name": "mayconmesquita",
-    "email": "hello@maycon.dev"
+  "version": "0.6.1-0.0.0",
+  "description": "support for Image `capInsets`",
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-native": "0.72.5"
+  },
+  "dependencies": {
+    "react-native-image-capinsets-next": "0.6.1"
   },
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/mayconmesquita/react-native-image-capinsets-next",
+  "homepage": "https://github.com/react-native-oh-library/react-native-image-capinsets-next",
   "keywords": [
     "capInsets",
     "9-patch",
+    "harmony",
     "nine-patch",
     "resizableimagewithcapinsets",
     "images",
     "react-native",
     "native"
-  ]
+  ],
+  "harmony": {
+    "alias": "react-native-image-capinsets-next",
+    "codegenConfig": {
+      "specPaths": [
+        "./src"
+      ]
+    }
+  }
 }

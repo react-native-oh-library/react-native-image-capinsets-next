@@ -1,1 +1,1 @@
-module.exports = require('./ImageCapInset');
+module.exports = require('./src/ImageCapInset');
