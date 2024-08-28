@@ -28,7 +28,7 @@ export struct RNCImageCapInsets {
 
   private onDescriptorWrapperChange(descriptorWrapper: RNC.RNCImageCapInsets.DescriptorWrapper) {
     this.descriptorWrapper = descriptorWrapper
-    this.src = this.descriptorWrapper.props.source?.uri || '' as ResourceStr
+    this.src = ('assets/' + this.descriptorWrapper.props.source?.uri?.split('//')[1]) || '' as ResourceStr
     this.capInsets = this.descriptorWrapper.props.capInsets || {}
   }
 
@@ -38,7 +38,7 @@ export struct RNCImageCapInsets {
 
   build() {
     RNViewBase({ ctx: this.ctx, tag: this.tag }) {
-      Image(this.src)
+      Image($rawfile(String(this.src)))
         .objectFit(ImageFit.Fill)
         .resizable({
           slice: {
