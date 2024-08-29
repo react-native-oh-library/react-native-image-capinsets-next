@@ -9,7 +9,7 @@
   "scripts": {
     "patch": "npm version patch -m 'Bump version %s';git push origin master --tags"
   },
-  "version": "0.6.1-0.0.2",
+  "version": "0.6.1-0.0.3",
   "description": "support for Image `capInsets`",
   "peerDependencies": {
     "react": "18.2.0",
