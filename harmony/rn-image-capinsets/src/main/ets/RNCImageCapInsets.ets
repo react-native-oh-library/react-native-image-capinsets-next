@@ -1,6 +1,7 @@
 import { RNComponentContext, RNViewBase } from '@rnoh/react-native-openharmony';
 // import codegen 生成的内容
 import { RNC } from "@rnoh/react-native-openharmony/generated";
+import { asset } from '@kit.AssetStoreKit';
 
 export const IMAGE_CAP_INSETS = "RNCImageCapInsets"
 
@@ -15,6 +16,7 @@ export struct RNCImageCapInsets {
   private cleanUpCallbacks: (() => void)[] = []
   @State src: PixelMap | ResourceStr| DrawableDescriptor = ''
   @State capInsets: EdgeWidths = {}
+  @State isUri: boolean = false
 
   aboutToAppear() {
     this.eventEmitter = new RNC.RNCImageCapInsets.EventEmitter(this.ctx.rnInstance, this.tag)
@@ -28,7 +30,10 @@ export struct RNCImageCapInsets {
 
   private onDescriptorWrapperChange(descriptorWrapper: RNC.RNCImageCapInsets.DescriptorWrapper) {
     this.descriptorWrapper = descriptorWrapper
-    this.src = ('assets/' + this.descriptorWrapper.props.source?.uri?.split('//')[1]) || '' as ResourceStr
+    this.isUri = String(this.descriptorWrapper.props.source?.uri).indexOf('asset://') > -1 ? false :true
+    this.src = (this.isUri ?
+      this.descriptorWrapper.props.source?.uri :
+      ('assets/' + this.descriptorWrapper.props.source?.uri?.split('//')[1])) || '' as ResourceStr
     this.capInsets = this.descriptorWrapper.props.capInsets || {}
   }
 
@@ -38,7 +43,7 @@ export struct RNCImageCapInsets {
 
   build() {
     RNViewBase({ ctx: this.ctx, tag: this.tag }) {
-      Image($rawfile(String(this.src)))
+      Image(this.isUri? this.src : $rawfile(String(this.src)))
         .objectFit(ImageFit.Fill)
         .resizable({
           slice: {
