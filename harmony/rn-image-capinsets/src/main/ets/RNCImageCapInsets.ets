@@ -33,7 +33,7 @@ export struct RNCImageCapInsets {
     this.isUri = String(this.descriptorWrapper.props.source?.uri).indexOf('asset://') > -1 ? false :true
     this.src = (this.isUri ?
       this.descriptorWrapper.props.source?.uri :
-      ('assets/' + this.descriptorWrapper.props.source?.uri?.split('//')[1])) || '' as ResourceStr
+      (this.descriptorWrapper.props.source?.uri?.replace('asset://', this.ctx.rnInstance.getAssetsDest()))) || '' as ResourceStr
     this.capInsets = this.descriptorWrapper.props.capInsets || {}
   }
 
