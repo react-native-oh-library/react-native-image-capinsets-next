@@ -5,7 +5,7 @@
   "name": "@react-native-oh-tpl/react-native-image-capinsets-next",
   "description": "",
   "main": "index.ets",
-  "version": "0.6.1-0.0.3",
+  "version": "0.6.1-0.0.4",
   "dependencies": {
     "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
   }
