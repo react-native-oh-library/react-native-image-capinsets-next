@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd. All rights reserved
+ * Use of this source code is governed by a MIT license that can be
+ * found in the LICENSE file.
+ */
+
 import { HostComponent, ViewProps } from "react-native";
 import codegenNativeComponent from "react-native/Libraries/Utilities/codegenNativeComponent";
 import {Double, WithDefault} from 'react-native/Libraries/Types/CodegenTypes';
